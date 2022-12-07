@@ -12,14 +12,23 @@
     >
       <h2 class="text-gray-700 text-md mb-2 font-bold">Test №2</h2>
       Задание №2 (знание JS-Vue) <br />
-      Есть API по адресу "<span class="text-red-400 font-bold"
-        >https://dummyjson.com/users</span
-      >" необходимо получить данные с которыми будем работать. Данные получаем
-      через <span class="text-red-400 font-bold">GET</span> запрос по адресу API
+      Есть API по адресам
+      <span class="text-red-400 font-bold">
+        https://dummyjson.com/users/?select=firstName,lastName,birthDate
+      </span>
+      и
+      <span class="text-red-400 font-bold"> https://dummyjson.com/todos </span>
+      необходимо получить данные с которыми будем работать. Необходимо
+      сопоставить-объединить данные Users и Todo (id->userId). Данные получаем
+      через
+      <span class="text-red-400 font-bold"> GET </span>
+      запросы.
       <br />
       1) Вывести данные в представленной таблице <br />
-      2) Реализовать сортировку по имени (по возрастанию a..z) <br />
-      3) Реализовать сортировку по дате рождения (по возрастанию 0..9) (*)
+      2) Реализовать сортировку по имени (по возрастанию a..z)(повторный клик
+      возвращает дефолтную последовательность)<br />
+      3) Реализовать сортировку по дате рождения (по возрастанию 0..9)(повторный
+      клик возвращает дефолтную последовательность) (*)
     </div>
 
     <div class="mt-8 flex flex-col">
@@ -43,7 +52,7 @@
                       select-none
                       pl-4
                       pr-3
-                      text-left text-sm
+                      text-left text-xs
                       font-semibold
                       text-gray-900
                       sm:pl-6
@@ -67,7 +76,7 @@
                     class="
                       px-3
                       py-3.5
-                      text-left text-sm
+                      text-left text-xs
                       font-semibold
                       text-gray-900
                     "
@@ -90,24 +99,12 @@
                     class="
                       px-3
                       py-3.5
-                      text-left text-sm
+                      text-left text-xs
                       font-semibold
                       text-gray-900
                     "
                   >
-                    Email
-                  </th>
-                  <th
-                    scope="col"
-                    class="
-                      px-3
-                      py-3.5
-                      text-left text-sm
-                      font-semibold
-                      text-gray-900
-                    "
-                  >
-                    University
+                    One of the ToDo
                   </th>
                 </tr>
               </thead>
@@ -119,7 +116,7 @@
                       py-4
                       pl-4
                       pr-3
-                      text-sm
+                      text-xs
                       font-medium
                       text-gray-900
                       sm:pl-6
@@ -127,14 +124,13 @@
                   >
                     Полное имя (Имя+Фамилия)
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  <td class="whitespace-nowrap px-3 py-4 text-xs text-gray-500">
                     Дата рождения (год-месяц-день)
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    Email
-                  </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    Уч.заведение
+                  <td class="px-3 py-4 text-xs text-gray-500">
+                    <div class="max-w-[150px]">
+                      Описание одного из TODOs если есть
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -150,9 +146,6 @@
 export default {
   metaInfo: {
     title: 'Test №2',
-  },
-  data() {
-    return {};
   },
 };
 </script>
