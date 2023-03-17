@@ -3,7 +3,7 @@
     <div
       class="
         p-4
-        text-xs text-blue-300
+        text-md text-blue-500
         shadow
         rounded
         border border-gray-100
@@ -11,24 +11,28 @@
       "
     >
       <h2 class="text-gray-700 text-md mb-2 font-bold">Test №2</h2>
-      Задание №2 (знание JS-Vue) <br />
-      Есть API по адресам
-      <span class="text-red-400 font-bold">
-        https://dummyjson.com/users/?select=firstName,lastName,birthDate
-      </span>
+      Задание №2 <br />
+      Есть API endpoints записанные в переменные
+      <a class="text-red-400 underline font-bold"  target="_blank" href="https://dummyjson.com/users/?select=firstName,lastName,birthDate">
+      getUserEndpoint
+      </a>
       и
-      <span class="text-red-400 font-bold"> https://dummyjson.com/todos </span>
-      необходимо получить данные с которыми будем работать. Необходимо
-      сопоставить-объединить данные Users и Todo (id->userId). Данные получаем
+      <a target="_blank" href="https://dummyjson.com/todos" class="text-red-400 underline font-bold"> getTodosEndpoint </a>
+      необходимо получить данные с которыми будем работать. Данные получаем
       через
       <span class="text-red-400 font-bold"> GET </span>
-      запросы.
+      запросы. (для удобства в зависимостях приложения есть <a class="underline" href="https://github.com/axios/axios" target="_blank">axios</a> либо можно воспользоваться
+      <a href="https://learn.javascript.ru/fetch" target="_blank" class="underline">fetch</a>)
       <br />
-      1) Вывести данные в представленной таблице <br />
-      2) Реализовать сортировку по имени (по возрастанию a..z)(повторный клик
-      возвращает дефолтную последовательность)<br />
-      3) Реализовать сортировку по дате рождения (по возрастанию 0..9)(повторный
-      клик возвращает дефолтную последовательность) (*)
+      <br />
+      1) Вывести данные в представленной таблице. Необходимо
+      сопоставить-объединить данные Users и Todo (id->userId) из 2х запросов. <br />
+      <br />
+      2) Реализовать сортировку по имени (только в одну сторону - по возрастанию a..z)(повторный клик
+      возвращает дефолтную последовательность которая изначально пришла с сервера)<br />
+      <br />
+      3) Реализовать сортировку по дате рождения (только по возрастанию 0..9)(повторный
+      клик возвращает дефолтную последовательность которая изначально пришла с сервера) (*)
     </div>
 
     <div class="mt-8 flex flex-col">
@@ -67,7 +71,6 @@
                         px-2
                         cursor-pointer
                       "
-                      @click="sortBy('name')"
                       >⤓</span
                     >
                   </th>
@@ -90,7 +93,6 @@
                         px-2
                         cursor-pointer
                       "
-                      @click="sortBy('date')"
                       >⤓</span
                     >
                   </th>
@@ -143,6 +145,9 @@
 </template>
 
 <script>
+const getUserEndpoint = 'https://dummyjson.com/users/?select=firstName,lastName,birthDate';
+const getTodosEndpoint = 'https://dummyjson.com/todos';
+
 export default {
   metaInfo: {
     title: 'Test №2',

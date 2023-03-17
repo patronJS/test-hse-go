@@ -3,7 +3,7 @@
     <div
       class="
         p-4
-        text-xs text-blue-300
+        text-md text-blue-500
         shadow
         rounded
         border border-gray-100
@@ -12,11 +12,10 @@
     >
       <h2 class="text-gray-700 text-md mb-2 font-bold">Test №1</h2>
       Задание №1 (знание CSS) <br />
-      Есть SVG изображение логотипа HSE. (P.S. учесть что контейнер может менять
-      размер - сейчас его размер 288*288px, масшрабировать логотипы не нужно)
+      Есть SVG изображение логотипа HSE.(<pre class="inline-block text-red-500">&lt;img width=&quot;30&quot; src=&quot;/img/logoHSE.svg&quot; alt=&quot;hse&quot; /&gt;</pre>)
       <br />
-      1) Расположить расположить по центру согласно фоновому изображению<br />
-      2) Добавить еще 2 логотипа и разместить согласно фоновому изображению.
+      1) Расположить расположить существующий логотип по центру и увеличить в размере (см. фон)<br />
+      2) Добавить еще 2 логотипа и разместить согласно фоновому изображению(в верхнем и нижнем левом углу ).
     </div>
 
     <div
@@ -33,7 +32,9 @@
       "
     >
       <!-- Start box coding  -->
+
       <img width="30" src="/img/logoHSE.svg" alt="hse" />
+
       <!-- End box coding  -->
       <img
         src="/img/bg-t1.png"
